@@ -43,7 +43,7 @@ def download_from_post(post_url, output_dir, login, password):
         click.echo('Directory {} does not exist'.format(output_dir))
         click.confirm('Do you want to create it?', abort=True)
         try:
-            os.mkdir(output_dir, 0766)
+            os.mkdir(output_dir, 0o766)
         except OSError as e:
             click.echo('Failed to create directory {}'.format(output_dir))
             click.echo(str(e))
